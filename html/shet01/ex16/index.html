@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Formulario con html</title>
+  </head>
+  <body>
+    <form action="datosformularios.com" method="post">
+      <h1>FORMULARIO</h1>
+      <ul>
+        <li>
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" name="user_name" maxlength="30" />
+        </li><br>
+        <li>
+          <label for="last_name">Apellidos:</label>
+          <input
+            type="text"
+            id="last_name"
+            name="user_last_name"
+            maxlength="30"
+          />
+        </li><br>
+        <li>
+          <label for="mail">Correo electrónico:</label>
+          <input type="email" id="mail" name="user_mail" />
+        </li><br>
+        <li>
+          <label for="opciones">Asunto</label>
+          <select name="desplegable" id="opciones" size="3">
+            <option value="opcion1">Pedir presupuesto</option>
+            <option value="opcion2">Solicitar cita previa</option>
+            <option value="opcion3">Otros</option>
+          </select>
+        </li><br>
+        <li>
+          <label for="opcionesmultiples">¿Cómo nos has conocido?</label>
+          <select
+            name="desplegable múltiple[]"
+            id="opcionesmultiples"
+            multiple
+            size="4"
+          >
+            <option value="opcion1">un amigo</option>
+            <option value="opcion2">googleando</option>
+            <option value="opcion3">buzoneo</option>
+            <option value="opcion3">otros</option>
+          </select>
+        </li><br>
+        <li>
+          <label for="msg"></label>
+          <textarea
+            id="msg"
+            name="user_mesaje"
+            maxlength="300">Escriba aquí su mensaje.</textarea>
+        </li><br>
+        <li>
+          <input type="checkbox" id="rgpd" name="rgpd_acceptance" required />
+          <label for="rgpd">
+            He leído y acepto el
+            <a href="#" target="_blank">aviso legal</a> y la
+            <a href="#" target="_blank">política de privacidad</a>.
+          </label>
+        </li><br>
+        <li class="button">
+          <button type="submit">Ahí va eso</button>
+        </li>
+      </ul>
+    </form>
+  </body>
+</html>
