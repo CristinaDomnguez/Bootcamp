@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Calculadora basica</title>
+    <style>
+        body{
+            text-align: center;
+            margin : 20px;
+            padding-inline: 100px;
+        }
+        .button-group{
+            display: flex;
+            justify-content: space-evenly; 
+            margin: 20px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="input-group">
+      <input type="number" id="numero1" />
+      <input type="number" id="numero2" />
+    </div>
+    <div class="button-group">
+      <button onclick="calcular('suma')">Sumar</button>
+      <button onclick="calcular('resta')">Restar</button>
+      <button onclick="calcular('multiplicacion')">Multiplicar</button>
+      <button onclick="calcular('division')">Dividir</button>
+    </div>
+    <p id="resultado"></p>
+    <script src="calculadora.js"></script>
+  </body>
+</html>
