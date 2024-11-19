@@ -8,6 +8,11 @@ const apiUrl = "https://pokeapi.co/api/v2/pokemon/";
 const totalPokemon = 20;
 
 // 4. Función para obtener los datos de un Pokémon
+/**
+ * Esta funcion obtiene los datos para un Pokemon particular
+ * @param {number} id
+ * @returns json con los datos del pokemon
+ */
 function fetchPokemonData(id) {
   return fetch(`${apiUrl}${id}`).then((response) => {
     if (!response.ok) {
@@ -48,15 +53,6 @@ function fetchEvolutionData(speciesUrl, pokemonName) {
 function createPokemonCard(data) {
   return fetchEvolutionData(data.species.url, data.name).then(
     (preEvolution) => {
-      // Verificar si hay evolución
-      const evolutionHTML = preEvolution
-        ? `
-          <p class="pokevoluciona">
-            <span class="pokevoluciona__indice">Evoluciona de:</span>
-            <span class="pokevoluciona__pokename">${preEvolution}</span>
-          </p>`
-        : "";
-
       // HTML de la tarjeta
       return `
         <div class="pokecard" title="Pokemon ${data.name}">
@@ -69,15 +65,21 @@ function createPokemonCard(data) {
             </div>
           </div>
           <div class="pokecard__botton">
-            <h2 class="pokename">${
-              data.name.charAt(0).toUpperCase() + data.name.slice(1)
-            }</h2>
+            <h2 class="pokename">${data.name}</h2>
             <ul class="pokecard__list">
               ${data.types
                 .map((type) => `<li>${type.type.name.toUpperCase()}</li>`)
                 .join("")}
             </ul>
-            ${evolutionHTML}
+            ${
+              preEvolution
+                ? `
+                  <p class="pokevoluciona">
+                    <span class="pokevoluciona__indice">Evoluciona de:</span>
+                    <span class="pokevoluciona__pokename">${preEvolution}</span>
+                  </p>`
+                : ""
+            }
           </div>
         </div>
       `;
