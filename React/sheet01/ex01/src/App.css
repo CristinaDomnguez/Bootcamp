@@ -1,0 +1,17 @@
+.card{
+  border: 1px solid blueviolet;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  width: 50%;
+}
+.card img{
+  border-radius: 10%;
+  width: 40%;
+  height: auto;
+  padding-right: 20px;
+}
+.card p{
+  color: rgb(235, 37, 100);
+  font-style: italic;
+}
