@@ -1,4 +1,4 @@
-public class Empleado extends Persona{
+public class Empleado extends Persona implements Imprimible{
     private int salario;
 
     public Empleado(String nombre, int edad, int salario) {
@@ -17,5 +17,10 @@ public class Empleado extends Persona{
     public void mostrarDetalles() {
         super.mostrarDetalles();
         System.out.println("El salario es: " + salario);
+    }
+    @Override
+    public void imprimir(){
+        System.out.println("Imprimiendo detalles del empleado: ");
+        mostrarDetalles();
     }
 }

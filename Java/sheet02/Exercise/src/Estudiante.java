@@ -1,4 +1,4 @@
-public class Estudiante extends Persona {
+public class Estudiante extends Persona implements Imprimible{
     private String grado;
 
     // Constructor
@@ -19,5 +19,10 @@ public class Estudiante extends Persona {
     public void mostrarDetalles() {
         super.mostrarDetalles();
         System.out.println("El grado es: " + grado);
+    }
+    @Override
+    public void imprimir(){
+        System.out.println("Imprimiendo detalles del estudiente: ");
+        mostrarDetalles();
     }
 }
