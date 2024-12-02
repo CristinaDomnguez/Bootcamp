@@ -1,7 +1,13 @@
 public class Main {
     public static void main(String[] args) {
-        Estudiante estudiante = new Estudiante("Ana", 20, "Ingeniería");
+        Persona[] personas = {
+            new Estudiante("Ana", 20, "Ingenieria"),
+            new Empleado("Jose Luis", 32, 40000)
+        };
 
-        estudiante.mostrarDetalles();
+        for (Persona persona : personas) {
+            persona.mostrarDetalles();
+            System.out.println("----------------------");
+        }
     }
 }
