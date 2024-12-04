@@ -12,7 +12,7 @@ public class IteratorExample {
         Iterator<Integer> iterador = numeros.iterator();
 
         while (iterador.hasNext()) {
-            int numero = iterador.next(); 
+            int numero = iterador.next();
             if (numero % 2 != 0) {
                 iterador.remove();
             }
